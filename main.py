@@ -17,6 +17,7 @@ t.penup()
 t.goto(0,-200)
 t.pendown()
 
+t.shapesize(stretch_len=2,stretch_wid=2)
 def move_forward():
     t.fd(50)
 def turn_left():
