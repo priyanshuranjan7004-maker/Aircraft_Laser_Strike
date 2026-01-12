@@ -12,6 +12,6 @@ class Obstacles:
         self.turt_obst.shapesize(stretch_wid=1,stretch_len=2)
         time.sleep(4)
         x= r.randint(100,-10)
-        self.turt_obst.goto(x,y=200)
+        self.turt_obst.goto(x=x,y=400)
         self.turt_obst.down(1)
         # run()
