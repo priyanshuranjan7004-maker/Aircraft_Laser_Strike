@@ -9,7 +9,7 @@ class Obstacles:
         time.sleep(3)
         self.turt_obst =turtle.Turtle()
         self.turt_obst.shape("square")
-        self.turt_obst.shapesize(stretch_wid=2,stretch_len=2)
+        self.turt_obst.shapesize(stretch_wid=1,stretch_len=2)
         time.sleep(4)
         x= r.randint(100,-10)
         self.turt_obst.goto(x,y=200)
