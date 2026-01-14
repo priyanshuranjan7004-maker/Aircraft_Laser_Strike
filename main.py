@@ -1,9 +1,6 @@
 import random
 import turtle
 from obstacles import Obstacles
-
-
-
 Game = True
 
 screen = turtle.Screen()
@@ -13,19 +10,19 @@ def obstacle():
     enemy =Obstacles()
     return enemy
 
-
-
 square_obstacles = obstacle()
-Final_enemy =square_obstacles.turt_obst
+Final_enemy1 =square_obstacles.turt_obst
+Final_enemy2 = square_obstacles.turt_obst
+Final_enemy3 = square_obstacles.turt_obst
+
+
 
 t = turtle.Turtle()
 t.shape("turtle")
 t.penup()
-
 t.goto(0,-200)
-# t.pendown()
-
 t.shapesize(stretch_len=2,stretch_wid=2)
+
 def move_forward():
     t.fd(50)
 def turn_left():
@@ -37,8 +34,18 @@ screen.onkey(turn_left,"Left")
 while True:
     x_axis = random.randint(20,60)
     y_axis = random.randint(300,400)
-    position_vector = turtle.Vec2D(x_axis, y_axis)
+    position_vector = (x_axis, y_axis)
+    def position_vector(x,y):
+        return [x,y]
     print("Okey")
-    Final_enemy.goto(position_vector)
+    position =position_vector(x_axis,y_axis)
+    # Final_enemy1.goto(position)
+    position1 =[35,350]
+    position2 = [55,320]
+    Final_enemy2.goto(position1)
+    Final_enemy3.goto(position2)
     screen.listen()
     screen.mainloop()
+
+
+
