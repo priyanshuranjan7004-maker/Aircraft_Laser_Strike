@@ -4,7 +4,7 @@ from obstacles import Obstacles
 
 
 
-op = 5
+Game = True
 
 screen = turtle.Screen()
 screen.setup(width=600,height=400)
@@ -34,13 +34,10 @@ def turn_left():
 screen.onkey(move_forward,"Up")
 screen.onkey(turn_left,"Left")
 
-while op < 10:
-    op+=1
-    print(op)
+while True:
     x_axis = random.randint(20,60)
     y_axis = random.randint(300,400)
     position_vector = turtle.Vec2D(x_axis, y_axis)
-    print(position_vector)
     print("Okey")
     Final_enemy.goto(position_vector)
     screen.listen()

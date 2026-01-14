@@ -5,13 +5,10 @@ import time
 game = True
 
 class Obstacles:
-    def __init__(self,turt_obst):
+    def __init__(self):
         time.sleep(3)
         self.turt_obst =turtle.Turtle()
         self.turt_obst.shape("square")
         self.turt_obst.shapesize(stretch_wid=1,stretch_len=2)
-        time.sleep(4)
-        x= r.randint(100,-10)
-        self.turt_obst.goto(x,y=200)
-        self.turt_obst.down(1)
+        self.turt_obst.penup()
         # run()
