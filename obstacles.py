@@ -1,14 +1,19 @@
-# def obstacles(self):
-import random as r
-import turtle
-import time
-game = True
 
+from turtle import Turtle
+import random
+
+COLORS = ["red","orange","yellow","green","blue","purple"]
 class Obstacles:
     def __init__(self):
-        time.sleep(3)
-        self.turt_obst =turtle.Turtle()
-        self.turt_obst.shape("square")
-        self.turt_obst.shapesize(stretch_wid=1,stretch_len=2)
-        self.turt_obst.penup()
+        self.all_obstacles =[]
+
+    def create_obstacles(self):
+        new_obstacle = Turtle()
+        new_obstacle.shapesize(stretch_wid=2,stretch_len=1)
+        new_obstacle.penup()
+        new_obstacle.color(random.choice(COLORS))
+        random_x = random.randint(280,-280)
+        self.goto(random_x,280)
+        self.all_obstacles.append(new_obstacle)
+
         # run()
