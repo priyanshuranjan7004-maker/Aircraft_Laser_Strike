@@ -1,31 +1,35 @@
-import random
-import turtle
+import time
+from turtle import Screen
 from obstacles import Obstacles
+from player import Player
 
-screen = turtle.Screen()
+screen = Screen()
 screen.setup(width=600,height=600)
-
-t = turtle.Turtle()
-t.shape("turtle")
-t.penup()
-t.goto(0,-280)
-t.shapesize(stretch_len=2,stretch_wid=2)
-
-obstacles =Obstacles()
-
-def move_forward():
-    t.fd(50)
-def turn_left():
-    t.left(90)
-
-screen.onkey(move_forward,"Up")
-screen.onkey(turn_left,"Left")
 screen.tracer(0)
 
-while True:
-    Obstacles()
+
+
+
+
+
+
+player = Player()
+obstacles =Obstacles()
+
+
+
+
+screen.listen()
+screen.onkey(player.go_up, "Up")
+
+
+
+game_is_on = True
+while game_is_on:
+    time.sleep(0.1)
+    screen.update()
     screen.listen()
-    screen.mainloop()
     obstacles.create_obstacles()
+    obstacles.move_obstacles()
 
-
+screen.exitonclick()
