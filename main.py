@@ -13,9 +13,9 @@ obstacles =Obstacles()
 
 screen.listen()
 screen.onkey(player.go_up, "Up")
-screen.onkey(player.left, "Left")
+screen.onkey(player.go_left, "Left")
+screen.onkey(player.go_right, "Right")
 
-screen.onkey(player.right, "Right")
 
 
 game_is_on = True
