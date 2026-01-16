@@ -1,4 +1,5 @@
 from turtle import Turtle
+from obstacles import Obstacles
 
 starting_position = (0,-280)
 Move_distance =10
@@ -12,6 +13,8 @@ class Player(Turtle):
         self.penup()
         self.setheading(90)
         self.go_to_start()
+    def fire(self):
+       fire = Obstacles()
 
     def go_to_start(self):
         self.goto(starting_position)
