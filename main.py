@@ -26,6 +26,16 @@ def move_lasers(lasers):
     lasers.forward(10)
     lasers.forward(10)
 
+def destroy_obstacles(lasers,obstacles):
+    for lase, obstacle in zip(lasers,obstacles):
+        print(lase.xcor())
+        print(obstacle.xcor())
+        if lase.xcor()== obstacle.xcor() and lase.ycor() == obstacle.ycor():
+            print("You got sucess")
+            lase.clear()
+            obstacle.clear()
+
+
 
 screen = turtle.Screen()
 screen.setup(width=600,height=600)
@@ -47,6 +57,7 @@ while game_is_on:
     screen.update()
     obstacles.create_obstacles()
     obstacles.move_obstacles()
+    destroy_obstacles(lasers, obstacles.list())
     for laser in lasers:
         move_lasers(laser)
     # for laser in lasers and for obs in obstacles:

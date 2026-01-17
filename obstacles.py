@@ -21,4 +21,6 @@ class Obstacles:
     def move_obstacles(self):
         for car in self.all_obstacles:
             car.forward(self.car_Speed)
+    def list(self):
+        return self.all_obstacles
 
