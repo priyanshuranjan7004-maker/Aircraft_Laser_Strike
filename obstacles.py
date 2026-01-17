@@ -22,4 +22,3 @@ class Obstacles:
         for car in self.all_obstacles:
             car.forward(self.car_Speed)
 
-        # run()
