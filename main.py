@@ -1,5 +1,6 @@
 import time
 import turtle
+import math
 # from turtle import Screen
 from obstacles import Obstacles
 from player import Player
@@ -28,9 +29,10 @@ def move_lasers(lasers):
 
 def destroy_obstacles(lasers,obstacles):
     for lase, obstacle in zip(lasers,obstacles):
-        print(lase.xcor())
-        print(obstacle.xcor())
-        if lase.xcor()== obstacle.xcor() and lase.ycor() == obstacle.ycor():
+        print(f"lase.xcor ={math.floor(lase.ycor())}")
+        print(f"obstacle.xcor ={math.floor(obstacle.ycor())}")
+        if (lase.xcor() in range(math.floor(lase.xcor())-10, math.floor(lase.xcor())+10) == obstacle.xcor() or
+                lase.ycor() in range( math.floor(obstacle.ycor())-10, math.floor(obstacle.ycor())) == lase.ycor()):
             print("You got sucess")
             lase.clear()
             obstacle.clear()
