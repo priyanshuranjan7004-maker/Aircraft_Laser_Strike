@@ -1,6 +1,8 @@
 from turtle import Turtle
 import random
 
+from django.contrib.messages import success
+
 COLORS = ["red","orange","yellow","green","blue","purple"]
 STARTING_MOVING_DISTANCE = 2
 class Obstacles:
@@ -21,8 +23,9 @@ class Obstacles:
     def move_obstacles(self):
         for car in self.all_obstacles:
             car.forward(self.car_Speed)
-            if car.ycor() <= -300:
+            if car.ycor() <= -301:
                 car.clear()
+                print("Sucess")
                 self.all_obstacles.remove(car)
 
 

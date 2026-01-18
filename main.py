@@ -32,11 +32,23 @@ def destroy_obstacles(lasers,obstacles):
     for lase, obstacle in zip(lasers,obstacles):
         print(f"lase.xcor ={math.floor(lase.ycor())}")
         print(f"obstacle.xcor ={math.floor(obstacle.ycor())}")
-        if (lase.xcor() in range(math.floor(lase.xcor())-10, math.floor(lase.xcor())+10) == obstacle.xcor() or
-                lase.ycor() in range( math.floor(obstacle.ycor())-10, math.floor(obstacle.ycor())) == lase.ycor()):
-            print("You got sucess")
-            lase.clear()
-            obstacle.clear()
+    for obs in obstacles :
+        for lase in lasers :
+            if obs.ycor() in range(math.floor(lase.ycor())-15,math.floor(lase.ycor())+15):
+                print("Y:Sucess")
+                if obs.xcor() in range(math.floor(lase.xcor())-15, math.floor(lase.xcor())+15):
+                    print("X:Sucess")
+                    lasers.remove(lase)
+                    lase.hideturtle()
+                    lase.setposition(310,310)
+                    obstacles.remove(obs)
+                    obs.setposition(-310,-310)
+        # if obs.ycor() in range()
+
+            #
+            # print("You got sucess")
+            # lase.clear()
+            # obstacle.clear()
 
 
 
@@ -62,7 +74,7 @@ while game_is_on:
     obstacles.move_obstacles()
     destroy_obstacles(lasers, obstacles.list())
     for laser in lasers:
-        if laser.ycor() >= 300:
+        if laser.ycor() >= 301:
             lasers.remove(laser)
         move_lasers(laser)
     # for laser in lasers and for obs in obstacles:
