@@ -14,37 +14,37 @@ lasers = []
 def bullets():
    bull= turtle.Turtle()
    bull.penup()
+   bull.shapesize(stretch_wid=1,stretch_len=1)
    bull.color(1,0,0)
    bull.setposition(player.xcor(),player.ycor())
    bull.setheading(90)
    bull.forward(20)
-   bull.pendown()
+   # bull.pendown()
    bull.pensize(5)
    lasers.append(bull)
 
-def move_lasers(lasers):
-    lasers.clear()
-    lasers.forward(10)
-    lasers.forward(10)
+def move_lasers(las):
+    las.forward(10)
+    las.forward(10)
 
 
-def destroy_obstacles(lasers,obstacles):
-    for lase, obstacle in zip(lasers,obstacles):
+def destroy_obstacles(la, ob):
+    for lase, obstacle in zip(la, ob):
         print(f"lase.xcor ={math.floor(lase.ycor())}")
         print(f"obstacle.xcor ={math.floor(obstacle.ycor())}")
-    for obs in obstacles :
-        for lase in lasers :
-            if obs.ycor() in range(math.floor(lase.ycor())-15,math.floor(lase.ycor())+15):
+    for obs in ob :
+        for lase in la :
+            if obs.ycor() in range(math.floor(lase.ycor())-20,math.floor(lase.ycor())+20):
                 print("Y:Sucess")
-                if obs.xcor() in range(math.floor(lase.xcor())-15, math.floor(lase.xcor())+15):
+                if obs.xcor() in range(math.floor(lase.xcor())-20, math.floor(lase.xcor())+20):
                     print("X:Sucess")
-                    lasers.remove(lase)
                     lase.hideturtle()
-                    lase.penup()
-
+                    lase.color("black")
                     lase.setposition(310,310)
-                    obstacles.remove(obs)
+                    ob.remove(obs)
                     obs.setposition(-310,-310)
+                    la.remove(lase)
+
 
 screen = turtle.Screen()
 screen.setup(width=600,height=600)
