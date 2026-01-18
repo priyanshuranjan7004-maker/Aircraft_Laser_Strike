@@ -27,6 +27,7 @@ def move_lasers(lasers):
     lasers.forward(10)
     lasers.forward(10)
 
+
 def destroy_obstacles(lasers,obstacles):
     for lase, obstacle in zip(lasers,obstacles):
         print(f"lase.xcor ={math.floor(lase.ycor())}")
@@ -61,6 +62,8 @@ while game_is_on:
     obstacles.move_obstacles()
     destroy_obstacles(lasers, obstacles.list())
     for laser in lasers:
+        if laser.ycor() >= 300:
+            lasers.remove(laser)
         move_lasers(laser)
     # for laser in lasers and for obs in obstacles:
     #     if laser.po

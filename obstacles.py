@@ -9,7 +9,7 @@ class Obstacles:
         self.car_Speed = STARTING_MOVING_DISTANCE
 
     def create_obstacles(self):
-        if random.randint(1,3)==2:
+        if random.randint(1,5)==2:
             new_obstacle = Turtle("square")
             new_obstacle.shapesize(stretch_wid=2,stretch_len=1)
             new_obstacle.penup()
@@ -21,6 +21,11 @@ class Obstacles:
     def move_obstacles(self):
         for car in self.all_obstacles:
             car.forward(self.car_Speed)
+            if car.ycor() <= -300:
+                car.clear()
+                self.all_obstacles.remove(car)
+
+
     def list(self):
         return self.all_obstacles
 
