@@ -1,7 +1,6 @@
 import time
 import turtle
 import math
-# from turtle import Screen
 from obstacles import Obstacles
 from player import Player
 
@@ -47,17 +46,16 @@ def destroy_obstacles(la, ob):
 
 
 screen = turtle.Screen()
+screen.colormode(255)
+screen.bgcolor(40,40,40)
+screen.title("SPACE INVADERS")
 screen.setup(width=600,height=600)
 screen.tracer(0)
-
 
 screen.listen()
 screen.onkey(player.go_up, "Up")
 screen.onkey(player.go_left, "Left")
 screen.onkey(bullets,"space")
-
-
-
 
 game_is_on = True
 while game_is_on:
@@ -70,10 +68,5 @@ while game_is_on:
         if laser.ycor() >= 301:
             lasers.remove(laser)
         move_lasers(laser)
-
-
-    print(lasers)
-    print(player.pos())
-
 
 screen.exitonclick()
