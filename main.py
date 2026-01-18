@@ -40,24 +40,17 @@ def destroy_obstacles(lasers,obstacles):
                     print("X:Sucess")
                     lasers.remove(lase)
                     lase.hideturtle()
+                    lase.penup()
+
                     lase.setposition(310,310)
                     obstacles.remove(obs)
                     obs.setposition(-310,-310)
-        # if obs.ycor() in range()
-
-            #
-            # print("You got sucess")
-            # lase.clear()
-            # obstacle.clear()
-
-
 
 screen = turtle.Screen()
 screen.setup(width=600,height=600)
 screen.tracer(0)
 
 
-# bull = Bullets.create_bullets(self=)a
 screen.listen()
 screen.onkey(player.go_up, "Up")
 screen.onkey(player.go_left, "Left")
@@ -77,14 +70,9 @@ while game_is_on:
         if laser.ycor() >= 301:
             lasers.remove(laser)
         move_lasers(laser)
-    # for laser in lasers and for obs in obstacles:
-    #     if laser.po
+
 
     print(lasers)
-    # print(obstacles.xcor())
-
-
-
     print(player.pos())
 
 
