@@ -7,6 +7,7 @@ from Scoreboard import Scoreboard
 
 Hit_Score = 0
 
+
 player = Player()
 obstacles =Obstacles()
 lasers = []
@@ -60,7 +61,7 @@ screen.setup(width=600,height=600)
 screen.tracer(0)
 
 screen.listen()
-screen.onkey(player.go_up, "Up")
+screen.onkey(player.go_right, "Right")
 screen.onkey(player.go_left, "Left")
 screen.onkey(bullets,"space")
 
@@ -69,7 +70,11 @@ while game_is_on:
     time.sleep(0.1)
     screen.update()
     obstacles.create_obstacles()
-    obstacles.move_obstacles()
+    op =obstacles.move_obstacles()
+
+    if op:
+        game_is_on= False
+        score.close_window()
     destroy_obstacles(lasers, obstacles.list())
     for laser in lasers:
         if laser.ycor() >= 301:

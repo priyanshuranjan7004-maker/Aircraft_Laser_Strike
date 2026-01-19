@@ -26,7 +26,9 @@ class Obstacles:
                 car.clear()
                 print("Sucess")
                 self.all_obstacles.remove(car)
-
+                return True
+        #     return None
+        # return None
 
     def list(self):
         return self.all_obstacles

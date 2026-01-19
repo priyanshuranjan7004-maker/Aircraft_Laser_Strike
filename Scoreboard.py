@@ -19,3 +19,7 @@ class Scoreboard(Turtle):
     def update (self,sel):
         self.clear()
         self.write(f"score:{sel}",font=font_style)
+    def close_window(self):
+        self.clear()
+        self.goto(-150,-50)
+        self.write("GAME OVER",font=("Arial",40,"bold"))

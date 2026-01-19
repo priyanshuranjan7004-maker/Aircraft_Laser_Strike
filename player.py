@@ -15,9 +15,8 @@ class Player(Turtle):
 
     def go_to_start(self):
         self.goto(starting_position)
-    def go_up(self):
-        self.forward(Move_distance)
     def go_right(self):
-        self.right(90)
+        self.goto(self.xcor()+20,self.ycor())
+        print("right sucess")
     def go_left(self):
-        self.left(90)
+        self.goto(self.xcor()-20,self.ycor())
