@@ -1,7 +1,6 @@
 from turtle import Turtle
 import random
 
-from django.contrib.messages import success
 
 COLORS = ["red","orange","yellow","green","blue","purple"]
 STARTING_MOVING_DISTANCE = 2

@@ -1,18 +1,21 @@
 from turtle import Turtle
 
+font_style = ("Arial", 24, "bold")
+
+
 class Scoreboard(Turtle):
+
     def __init__(self):
         self.score = 0
         super().__init__()
         # self.speed("fastest")
         self.penup()
         self.hideturtle()
-        self.goto(-295,300)
+        self.goto(-280,270)
         self.color(1,1,1)
-        font_style = ("Arial",24,"bold")
         print("hello")
 
-        self.write("score:0",font = ("Arial",24,"bold"))
+        self.write("score:0",font = font_style)
     def update (self,sel):
         self.clear()
-        self.write(f"score:{sel}")
+        self.write(f"score:{sel}",font=font_style)
