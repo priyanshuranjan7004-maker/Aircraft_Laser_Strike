@@ -36,9 +36,9 @@ def destroy_obstacles(la, ob):
         print(f"obstacle.xcor ={math.floor(obstacle.ycor())}")
     for obs in ob :
         for lase in la :
-            if obs.ycor() in range(math.floor(lase.ycor())-20,math.floor(lase.ycor())+20):
+            if obs.ycor() in range(math.floor(lase.ycor())-25,math.floor(lase.ycor())+25):
                 print("Y:Sucess")
-                if obs.xcor() in range(math.floor(lase.xcor())-20, math.floor(lase.xcor())+20):
+                if obs.xcor() in range(math.floor(lase.xcor())-25, math.floor(lase.xcor())+25):
                     print("X:Sucess")
                     lase.hideturtle()
                     lase.color("black")
